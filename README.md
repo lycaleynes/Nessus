@@ -2,84 +2,98 @@
 
 <h2>Description</h2>
 
-<p>In this project, I designed a hands-on guide to performing vulnerability assessments using Nessus, a popular and powerful vulnerability scanner. The project is tailored for beginners to help them gain practical experience in identifying, analyzing, and prioritizing security vulnerabilities in a target system or network.</p>
+<p>This project involves learning and utilizing the Nexus Essentials Vulnerability Scanner, a free and widely-used tool for identifying security vulnerabilities in networks. The scanner automates the detection of issues like outdated software and default passwords across up to 16 devices, providing detailed reports ranked by severity using the CVSS framework. Participants will install, configure, and run scans to practice identifying and remediating vulnerabilities, ensuring a secure network environment.</p>
 
-<h2>Pre-requisites</h2>
+<h2>Requirements</h2>
 
-- Basic understanding of network and system administration
-- Familiarity with Linux command line
-- A computer with a Linux-based operating system (preferably Ubuntu)
-- Nessus Home or Professional license (Nessus Home is free for personal use)
+- Operating System:
+  - Windows 10 or later (64-bit)
+  - macOS 10.15 or later
+  - Various Linux distributions (e.g., Ubuntu, CentOS, Debian)
+- Hardware:
+  - Minimum 2 GHz CPU
+  - At least 4 GB RAM (8 GB recommended for larger networks)
+  - 20 GB available disk space
+- Browser:
+  - Chrome, Firefox, Edge, or Safari to access the Nessus interface via ``https://localhost:8834``
+- Internet Connection:
+  - Required for downloading the installer, plugins, and updates.
+- Account Registration:
+  - A valid email address to register and receive the activation code for Nessus Essentials.
 
-<h2>Lab Set-up and Tools</h2>
+## Understand the Purpose of Vulnerability Scanners
 
-- Ubuntu 20.04 or later
-- Nessus installed (instructions provided in the first task)
-- A target machine for scanning (can be a local VM or a networked device)
+- Vulnerability scanners automate the process of identifying vulnerabilities (e.g., missing updates, default passwords) on a network.
+- They rank vulnerabilities by severity to prioritize fixes.
 
-<h2>Task 1: Installing Nessus</h2>
+## Task 1: Download the Nexus Essentials Scanner
 
-1. Download the Nessus installation package from the Tenable website:
-   ```bash
-   wget https://www.tenable.com/downloads/api/v1/public/pages/nessus/downloads/XXXX/download?i_agree_to_tenable_license_agreement=true
-   ```
-2. Install Nessus using the downloaded package:
-   ```bash
-   sudo dpkg -i <name-of-downloaded-file>.deb
-   ```
-3. Start the Nessus service:
-   ```bash
-   sudo systemctl start nessusd
-   ```
-4. Enable the Nessus service to start automatically on boot:
-   ```bash
-   sudo systemctl enable nessusd
-   ```
-5. Open the Nessus web interface by navigating to ``https://<your-ip>:8834`` in your browser.
+1. Open a browser and search for "Nexus Essentials Vulnerability Scanner."
+2. Visit the Tenable website, fill in the required fields (first name, last name, email), and click "Get Started."
+3. Follow the link sent to your email to download the software.
+4. Choose the appropriate version for your system (e.g., Windows x86 64-bit).
 
-**Expected Outcome:**
+## Task 2: Install the Scanner
 
-- Nessus will be successfully installed and running, and you’ll be able to access its web interface to proceed with the initial setup.
+1. Launch the installer after downloading.
+2. Select the default installation options (no custom changes needed).
+3. Allow the software to download and install required plugins (this process may take 30–40 minutes).
 
-## Task 2: Configuring Nessus for Scanning
+## Task 3: Access the Scanner
 
-1. Log in to the Nessus web interface.
-2. Complete the initial setup by creating an admin account and activating Nessus with the provided activation code.
-3. Navigate to the Settings section to configure optional proxy settings or enable updates.
+1. The scanner is accessed via a web browser.
+2. Open a browser and navigate to ``https://localhost:8834``.
+3. Save the URL for easy access later.
 
-**Expected Outcome:**
+## Task 4: Set Up the Scanner
 
-- Nessus will be fully configured and ready to create custom scan policies and scanning tasks.
+1. Register the software using the activation code sent to your email.
+2. Create a username and password to log in.
+3. Use a strong password (e.g., "P@ssw0rd").
 
-## Task 3: Creating a Scan Policy
+## Task 5: Find Your Network Details
 
-1. In the Nessus web interface, go to the Policies section.
-2. Click New Policy to create a custom scan policy.
-3. Choose a policy template that fits your scanning needs (e.g., Basic Network Scan).
-4. Customize the policy by adding details such as the scan name, description, and target preferences.
-5. Save your newly created policy.
+1. Open the Command Prompt:
+   - Press ``Win + R``, type ``cmd``, and press Enter.
+   - Type ipconfig and note the following:
+     - IP Address: (e.g., ``10.0.2.15``)
+     - Subnet Mask: (e.g., ``255.255.255.0``, indicating a /24 network).
+     - Determine the network ID: e.g., ``10.0.2.0/24``.
 
-**Expected Outcome:**
+## Task 6: Create a New Scan
 
-- The scan policy is created and saved, ready to be applied for targeted scanning.
+1. Log in to the scanner via your browser (``https://localhost:8834``).
+2. Select the option to create a new scan and choose a "Basic Network Scan."
+3. Name your scan (e.g., "My Home Network").
+4. Enter the network ID (e.g., ``10.0.2.0/24``).
+5. Save the scan configuration.
 
-## Task 4: Running a Vulnerability Scan
+## Task 7: Run the Scan
 
-1. Navigate to the Scans section in the Nessus web interface.
-2. Click New Scan and select the policy created in the previous step.
-3. Enter the scan details, such as a name for the scan and the target IP address.
-4. Save the scan configuration and click Launch to start the scan.
+1. Launch the scan and wait for it to complete.
+2. Scanning time will vary based on network size and resources.
 
-**Expected Outcome:**
+## Task 8: Review the Results
 
-- The scan begins, and you can monitor its progress and review preliminary results in real-time.
+1. Once the scan is complete, review the findings:
+   - Informational: General details; no immediate action required.
+   - Low/Medium/High/Critical: Assess these vulnerabilities based on severity and prioritize fixes.
+2. Click on each vulnerability to view details (e.g., outdated software, default passwords).
 
-## Task 5: Analyzing Scan Results
+## Task 9: Remediate Vulnerabilities
 
-1. Once the scan is complete, open the completed scan in the Scans section.
-2. Review the scan results, paying attention to identified vulnerabilities, their severity levels, and recommended remediation steps.
-3. Export the scan report in your preferred format (e.g., PDF, HTML) for documentation and further analysis.
+1. Address vulnerabilities based on severity:
+   - Critical/High: Fix immediately (e.g., update software, reset default passwords).
+   - Medium/Low: Address as time permits.
+2. For outdated machines: Run Windows Update or apply necessary patches.
 
-**Expected Outcome:**
+## Task 10: Ongoing Use
 
-- A detailed scan report is generated, highlighting vulnerabilities, their severity, and actionable remediation recommendations.
+1. Keep the software installed to regularly scan your network (up to 16 devices for free).
+2. Regularly check for software updates to ensure the scanner is up-to-date.
+
+## Key Points to Remember
+
+- The scanner uses the CVSS (Common Vulnerability Scoring System) to rank vulnerabilities.
+- Save the scanner’s access URL (``https://localhost:8834``) with the correct protocol (HTTPS).
+- The software is free for up to 16 devices and can be used for both personal and small office networks.
