@@ -54,11 +54,21 @@
 ## Task 5: Find Your Network Details
 
 1. Open the Command Prompt:
-   - Press ``Win + R``, type ``cmd``, and press Enter.
-   - Type ipconfig and note the following:
-     - IP Address: (e.g., ``10.0.2.15``)
-     - Subnet Mask: (e.g., ``255.255.255.0``, indicating a /24 network).
-     - Determine the network ID: e.g., ``10.0.2.0/24``.
+   - Open the Terminal
+     - Press ``Command + Space``, type ``Terminal``, and press Enter.
+   - Use this command to directly display the IP address and network information:
+     ```bash
+     ipconfig getifaddr en0
+     ```
+   - For the subnet mask:
+     ```bash
+     ipconfig getoption en0 subnet_mask
+     ```
+2. Determine the Network ID
+   - Convert the IP address and subnet mask to the network ID. For example:
+     - IP Address: 192.168.1.14
+     - Subnet Mask: 255.255.255.0 (or /24).
+     - Network ID: 192.168.1.14/24.
 
 ## Task 6: Create a New Scan
 
