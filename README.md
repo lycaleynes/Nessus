@@ -53,8 +53,7 @@
 
 ## Task 5: Find Your Network Details
 
-1. Open the Command Prompt:
-   - Open the Terminal
+1. Open the Terminal
      - Press ``Command + Space``, type ``Terminal``, and press Enter.
    - Use this command to directly display the IP address and network information:
      ```bash
