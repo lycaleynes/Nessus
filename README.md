@@ -29,40 +29,91 @@
 ## Task 1: Download the Nexus Essentials Scanner
 
 1. Open a browser and search for "Nexus Essentials Vulnerability Scanner."
-2. Visit the Tenable website, fill in the required fields (first name, last name, email), and click "Get Started."
-3. Follow the link sent to your email to download the software.
-4. Choose the appropriate version for your system (e.g., Windows x86 64-bit).
+<p align="center">
+<img src="https://i.imgur.com/pbjWJK1.png" height="80%" width="80%" alt="Nessus"/>
+</p>
+
+3. Visit the Tenable website, fill in the required fields (first name, last name, email), and click "Get Started."
+<p align="center">
+<img src="https://i.imgur.com/fBZhoEf.png" height="80%" width="80%" alt="Nessus"/>
+</p>
+
+4. Follow the link sent to your email to download the software.
+<p align="center">
+<img src="https://i.imgur.com/iAxgCKZ.png" height="80%" width="80%" alt="Nessus"/>
+</p>
+
+5. Choose the appropriate version for your system (e.g., Windows x86 64-bit).
+<p align="center">
+<img src="https://i.imgur.com/r0hFFSK.png" height="80%" width="80%" alt="Nessus"/>
+</p>
 
 ## Task 2: Install the Scanner
 
 1. Launch the installer after downloading.
+<p align="center">
+<img src="https://i.imgur.com/K9blKwP.png" height="80%" width="80%" alt="Nessus"/>
+</p>
+
 2. Select the default installation options (no custom changes needed).
+
 3. Allow the software to download and install required plugins (this process may take 30–40 minutes).
+<p align="center">
+<img src="https://i.imgur.com/OgiBzSE.png" height="80%" width="80%" alt="Nessus"/>
+</p>
 
 ## Task 3: Access the Scanner
 
 1. The scanner is accessed via a web browser.
+
 2. Open a browser and navigate to ``https://localhost:8834``.
+<p align="center">
+<img src="https://i.imgur.com/uqI7CV5.png" height="80%" width="80%" alt="Nessus"/>
+</p>
+
 3. Save the URL for easy access later.
 
 ## Task 4: Set Up the Scanner
 
 1. Register the software using the activation code sent to your email.
+<p align="center">
+<img src="https://i.imgur.com/w4giqjd.png" height="80%" width="80%" alt="Nessus"/>
+</p>
+
 2. Create a username and password to log in.
+<p align="center">
+<img src="https://i.imgur.com/ydUTVQY.png" height="80%" width="80%" alt="Nessus"/>
+</p>
+
 3. Use a strong password (e.g., "P@ssw0rd").
+
+4. Wait for download to complete.
+<p align="center">
+<img src="https://i.imgur.com/oBw0seC.png" height="80%" width="80%" alt="Nessus"/>
+</p>
 
 ## Task 5: Find Your Network Details
 
 1. Open the Terminal
      - Press ``Command + Space``, type ``Terminal``, and press Enter.
-   - Use this command to directly display the IP address and network information:
-     ```bash
-     ipconfig getifaddr en0
-     ```
-   - For the subnet mask:
-     ```bash
-     ipconfig getoption en0 subnet_mask
-     ```
+       <p align="center">
+       <img src="https://i.imgur.com/F7kG97z.png" height="80%" width="80%" alt="Nessus"/></p>
+
+       - Use this command to directly display the IP address and network information:
+         ```bash
+         ipconfig getifaddr en0
+         ```
+         <p align="center">
+          <img src="https://i.imgur.com/WbVzMc5.png" height="80%" width="80%" alt="Nessus"/>
+          </p>
+          
+       - For the subnet mask:
+         ```bash
+         ipconfig getoption en0 subnet_mask
+         ```
+         <p align="center">
+          <img src="https://i.imgur.com/AZXaY2H.png" height="80%" width="80%" alt="Nessus"/>
+          </p>
 2. Determine the Network ID
    - Convert the IP address and subnet mask to the network ID. For example:
      - IP Address: 192.168.1.14
@@ -72,14 +123,31 @@
 ## Task 6: Create a New Scan
 
 1. Log in to the scanner via your browser (``https://localhost:8834``).
+
 2. Select the option to create a new scan and choose a "Basic Network Scan."
+<p align="center">
+<img src="https://i.imgur.com/qmzDuAi.png" height="80%" width="80%" alt="Nessus"/>
+</p>
+
 3. Name your scan (e.g., "My Home Network").
-4. Enter the network ID (e.g., ``10.0.2.0/24``).
+<p align="center">
+<img src="https://i.imgur.com/qXYrMqZ.png" height="80%" width="80%" alt="Nessus"/>
+</p>
+
+4. Enter the network ID (e.g., ``192.168.1.14/24``).
+<p align="center">
+<img src="https://i.imgur.com/PWlJIu8.png" height="80%" width="80%" alt="Nessus"/>
+</p>
+
 5. Save the scan configuration.
 
 ## Task 7: Run the Scan
 
 1. Launch the scan and wait for it to complete.
+<p align="center">
+<img src="https://i.imgur.com/jlyhu0C.png" height="80%" width="80%" alt="Nessus"/>
+</p>
+
 2. Scanning time will vary based on network size and resources.
 
 ## Task 8: Review the Results
@@ -87,7 +155,30 @@
 1. Once the scan is complete, review the findings:
    - Informational: General details; no immediate action required.
    - Low/Medium/High/Critical: Assess these vulnerabilities based on severity and prioritize fixes.
+<p align="center">
+<img src="https://i.imgur.com/fwchVyM.png" height="80%" width="80%" alt="Nessus"/>
+</p>
+
 2. Click on each vulnerability to view details (e.g., outdated software, default passwords).
+<p align="center">
+<img src="https://i.imgur.com/iVdqtJd.png" height="80%" width="80%" alt="Nessus"/>
+</p>
+
+<p align="center">
+<img src="https://i.imgur.com/RpYRMu6.png" height="80%" width="80%" alt="Nessus"/>
+</p>
+
+<p align="center">
+<img src="https://i.imgur.com/WjYY0p3.png" height="80%" width="80%" alt="Nessus"/>
+</p>
+
+<p align="center">
+<img src="https://i.imgur.com/m5joU5u.png" height="80%" width="80%" alt="Nessus"/>
+</p>
+
+<p align="center">
+<img src="https://i.imgur.com/OVI2mP6.png" height="80%" width="80%" alt="Nessus"/>
+</p>
 
 ## Task 9: Remediate Vulnerabilities
 
@@ -95,6 +186,9 @@
    - Critical/High: Fix immediately (e.g., update software, reset default passwords).
    - Medium/Low: Address as time permits.
 2. For outdated machines: Run Windows Update or apply necessary patches.
+<p align="center">
+<img src="https://i.imgur.com/LCYMZ6W.png" height="80%" width="80%" alt="Nessus"/>
+</p>
 
 ## Task 10: Ongoing Use
 
